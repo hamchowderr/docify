@@ -1,0 +1,25 @@
+{
+  "name": "docify",
+  "version": "1.0.0",
+  "description": "Convert Markdown to Google Docs via REST API",
+  "type": "module",
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "engines": {
+    "node": "24"
+  },
+  "dependencies": {
+    "docx": "^8.5.0",
+    "googleapis": "^128.0.0",
+    "marked": "^11.1.0"
+  },
+  "devDependencies": {
+    "@types/marked": "^5.0.2",
+    "@types/node": "^18.0.0",
+    "@vercel/node": "^3.0.0",
+    "typescript": "^5.0.0"
+  },
+  "private": true
+}
