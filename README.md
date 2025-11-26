@@ -68,6 +68,46 @@ curl -X POST https://your-deployment.vercel.app/api \
 }
 ```
 
+## Make (Integromat) Setup
+
+Use the **HTTP > Make an OAuth 2.0 request** module:
+
+![Make HTTP Module](.github/assets/screen1.png)
+
+### Create OAuth Connection
+
+Configure the connection with these settings:
+
+![Make OAuth Connection](.github/assets/screen2.png)
+
+| Field | Value |
+|-------|-------|
+| **Authorize URI** | `https://accounts.google.com/o/oauth2/v2/auth` |
+| **Token URI** | `https://oauth2.googleapis.com/token` |
+| **Scope** | `https://www.googleapis.com/auth/drive.file` |
+| **Client ID** | Your Google OAuth Client ID |
+| **Client Secret** | Your Google OAuth Client Secret |
+
+### Google Cloud Console Setup
+
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Create OAuth 2.0 credentials (Web application)
+3. Add redirect URI: `https://www.integromat.com/oauth/cb/oauth2`
+
+### Configure the Request
+
+- **URL**: `https://your-deployment.vercel.app/api`
+- **Method**: POST
+- **Headers**: `Content-Type: application/json`
+- **Body type**: Raw (JSON)
+- **Body**:
+```json
+{
+  "output": "# Your Markdown Here",
+  "fileName": "Document Name"
+}
+```
+
 ## Supported Markdown
 
 - `# Heading 1` through `###### Heading 6`
