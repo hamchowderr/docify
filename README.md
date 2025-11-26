@@ -39,7 +39,7 @@ Or connect your GitHub repo to Vercel for automatic deployments.
 
 ## Usage
 
-Send a POST request to your deployed endpoint:
+Send a POST request to your deployed endpoint. For **Make** and **n8n**, see the setup guides below - they handle OAuth automatically using your Client ID and Secret.
 
 ```bash
 curl -X POST https://your-deployment.vercel.app/api \
@@ -50,6 +50,8 @@ curl -X POST https://your-deployment.vercel.app/api \
     "fileName": "My Document"
   }'
 ```
+
+> **Note**: The Bearer token above is for direct API calls. When using Make or n8n, you only need to configure your Google OAuth **Client ID** and **Client Secret** - the platforms handle token management automatically.
 
 ### Request Body
 
