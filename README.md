@@ -88,6 +88,8 @@ Configure the connection with these settings:
 | **Client ID** | Your Google OAuth Client ID |
 | **Client Secret** | Your Google OAuth Client Secret |
 
+> **Required Scope**: `https://www.googleapis.com/auth/drive.file` - allows creating files in Google Drive
+
 ### Google Cloud Console Setup
 
 1. Go to [Google Cloud Console](https://console.cloud.google.com/)
@@ -118,9 +120,12 @@ Use the **HTTP Request** node with Google OAuth2 credentials:
 
 1. Go to **Settings > Credentials > Add Credential**
 2. Search for "Google OAuth2 API"
-3. Connect your Google account
+3. Add the required scope: `https://www.googleapis.com/auth/drive.file`
+4. Connect your Google account
 
 ![n8n OAuth Setup](.github/assets/n8n-screen2.png)
+
+> **Required Scope**: `https://www.googleapis.com/auth/drive.file` - allows creating files in Google Drive
 
 ### Configure HTTP Request Node
 
