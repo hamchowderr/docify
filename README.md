@@ -108,6 +108,41 @@ Configure the connection with these settings:
 }
 ```
 
+## n8n Setup
+
+Use the **HTTP Request** node with Google OAuth2 credentials:
+
+![n8n HTTP Request](.github/assets/n8n-screen1.png)
+
+### Create Google OAuth2 Credentials
+
+1. Go to **Settings > Credentials > Add Credential**
+2. Search for "Google OAuth2 API"
+3. Connect your Google account
+
+![n8n OAuth Setup](.github/assets/n8n-screen2.png)
+
+### Configure HTTP Request Node
+
+| Field | Value |
+|-------|-------|
+| **Method** | POST |
+| **URL** | `https://your-deployment.vercel.app/api` |
+| **Authentication** | Predefined Credential Type |
+| **Credential Type** | Google OAuth2 API |
+| **Send Headers** | On |
+| **Header Name** | Content-Type |
+| **Header Value** | application/json |
+
+### Request Body (JSON)
+
+```json
+{
+  "output": "# Your Markdown Here",
+  "fileName": "Document Name"
+}
+```
+
 ## Supported Markdown
 
 - `# Heading 1` through `###### Heading 6`
